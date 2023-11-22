@@ -27,3 +27,13 @@ test('Verify multiple links text in the webpage', async ({ page }) => {
         console.log(linkText);
     }
 })
+
+
+test('Verify multiple web elements in the webpage', async ({ page }) => {
+    await page.goto('https://www.demoblaze.com/')
+    const webPageProducts = await page.$$('//div[@id="tbodyid"]//div/h4');
+    for (const product of webPageProducts) {
+        const prods = await product.textContent();
+        console.log(prods);
+    }
+})
