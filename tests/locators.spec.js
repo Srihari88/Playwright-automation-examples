@@ -35,3 +35,17 @@ test('Test and Verify various locators in the playwright ', async ({ page }) => 
     console.log(dynamicTxt)
 
 })
+
+
+test('',async({page})=>{
+
+    page.goto('https://www.saucedemo.com/')
+
+    //getByPlaceholder
+
+    await page.getByPlaceholder('Username').fill('standard_user')
+    await page.getByPlaceholder('Password').type('secret_sauce')
+    await page.getByRole('input',{type:"submit"})
+
+
+})
